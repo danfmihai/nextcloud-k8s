@@ -2,7 +2,7 @@
 
 ## Will install Nexcloud in Kubernetes
 
-## Prerequisites
+## Prerequisites 
 - Kubernetes 1.9+
 - PV provisioner support (nfs-client provisioner) 
 

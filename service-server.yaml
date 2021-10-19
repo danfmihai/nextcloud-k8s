@@ -7,7 +7,7 @@ metadata:
   name: nextcloud-server-service
 spec:
   ports:
-  - port: 80
+  - port: 80 
     protocol: TCP
     targetPort: 80
   selector:

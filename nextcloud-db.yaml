@@ -11,9 +11,9 @@ spec:
     matchLabels:
       app: nextcloud-db
   strategy: {}
-  template:
+  template: 
     metadata:
-      creationTimestamp: null
+      
       labels:
         app: nextcloud-db
     spec:

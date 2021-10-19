@@ -16,7 +16,7 @@ spec:
       creationTimestamp: null
       labels:
         app: nextcloud-server
-    spec:
+    spec: 
       containers:
       - image: nextcloud:22-apache
         name: nextcloud

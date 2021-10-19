@@ -6,7 +6,7 @@ metadata:
     app: nextcloud-db
   name: nextcloud-db-service
 spec:
-  ports:
+  ports: 
   - port: 3306
     protocol: TCP
   selector:
