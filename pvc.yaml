@@ -4,10 +4,10 @@ metadata:
   name: nextcloud-pv-claim 
   labels: 
     app: nextcloud
-
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 5Gi
+      

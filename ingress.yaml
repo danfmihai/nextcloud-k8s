@@ -5,7 +5,7 @@ metadata:
     haproxy-ingress.github.io/rewrite-target: "/"
     #haproxy.org/path-rewrite: "/"
     kubernetes.io/ingress.class: haproxy
-  name: ha-ingress-nextcloud
+  name: haproxy-ingress-nextcloud
 spec:
    
   rules:
