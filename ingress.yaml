@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    haproxy-ingress.github.io/rewrite-target: "/"
+    #haproxy.org/path-rewrite: "/"
+    kubernetes.io/ingress.class: haproxy
+  name: ha-ingress-nextcloud
+spec:
+   
+  rules:
+   - host: nextcloud.test
+     http:
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: nextcloud-server-service
+            port:
+              number: 80

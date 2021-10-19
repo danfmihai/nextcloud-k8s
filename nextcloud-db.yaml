@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nextcloud-db
+  name: nextcloud-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextcloud-db
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nextcloud-db
+    spec:
+      containers:
+      - image: mariadb:10.5
+        name: mariadb
+        env:
+        - name: MYSQL_DATABASE
+          value: nextcloud
+        envFrom:
+        - secretRef:
+            name: nextcloud-db-secret  
+        volumeMounts:
+        - mountPath: "/var/lib/mysql"
+          name: db-storage
+      volumes:
+      - name: db-storage
+        persistentVolumeClaim:
+          claimName: nextcloud-pv-claim

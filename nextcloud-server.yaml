@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nextcloud-server
+  name: nextcloud-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextcloud-server
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nextcloud-server
+    spec:
+      containers:
+      - image: nextcloud:22-apache
+        name: nextcloud
+        volumeMounts:
+        - mountPath: "/var/www/html"
+          name: server-storage
+      volumes:
+      - name: server-storage
+        persistentVolumeClaim:
+          claimName: nextcloud-pv-claim  
